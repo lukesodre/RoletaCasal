@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Roulette.js Demo</title>
+    <title>Roleta do amor!</title>
     <link rel="stylesheet" href="/css/bootstrap.css"></link>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/ui-lightness/jquery-ui.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.css"></link>
@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="./">Roulette.js</a>
+                <a class="brand" href="./">Roleta do amor!</a>
                 <div class="nav-collapse collapse" id="main-menu">
                     <ul class="nav pull-right" id="main-menu-right">
                         <li><a rel="tooltip" target="_blank" href="https://github.com/akira-kuriyama/roulette.js">Github<i class="icon-share-alt"></i></a></li>
@@ -32,55 +32,45 @@
     <div class="container">
         <div class="page-header" style="">
             <h1>
-                Roulette.js DEMO
+                Roleta do amor!
             </h1>
         </div>
 
         <div class="row">
-            <div class="span4">
-                <div class="roulette_container">
+            <div style="margin-left:20px;border:1px solid rgba(253, 252, 253, 0.31);" >
+                <div style="display:inline-block;" class="roulette_container">
                     <div class="rouletteMeninos" style="display:none;">
                         <% for(var i=0; i<fotosMeninos.length; i++) {%>
-                            <img src=<%= fotosMeninos[i] %>>
+                            <img src=<%=fotosMeninos[i] %>>
                             <% } %>
                     </div>
+                    <div class="btn_container">
+                        <p>
+                            <button id="startMeninos" class="btn btn-large btn-primary start"> Girar </button>
+                        </p>
+                    </div>
                 </div>
-                <div class="btn_container">
-                    <p>
-                        <button id="startMeninos" class="btn btn-large btn-primary start"> START </button>
-                        <button class="stop btn-large btn btn-warning"> STOP </button>
-                    </p>
+                <div style="display:inline-block;">
+                    <img style="margin:-195px 20px 0px 20px; width:200px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Heart_icon_red_hollow.svg/2000px-Heart_icon_red_hollow.svg.png" alt="">
                 </div>
-                <hr>
-                <div class="roulette_container">
+                <div style="display:inline-block;" class="roulette_container">
                     <div class="rouletteMeninas" style="display:none;">
                         <% for(var i=0; i<fotosMeninas.length; i++) {%>
-                            <img src=<%= fotosMeninas[i] %>>
+                            <img src=<%=fotosMeninas[i] %>>
                             <% } %>
                     </div>
-                </div>
-                <div class="btn_container">
-                    <p>
-                        <button id="startMeninas" class="btn btn-large btn-primary start"> START </button>
-                        <button class="stop btn-large btn btn-warning"> STOP </button>
-                    </p>
-                </div>
-            </div>
-            <div class="span4">
-                <div class="right_container">
-                    <% for(var i=0; i<fotosMeninos.length; i++) {%>
-                        <li>
-                            <%= fotosMeninos[i] %>
-                        </li>
-                        <% } %>
-                        <hr>
-                     <% for(var i=0; i<fotosMeninas.length; i++) {%>
-                        <li>
-                            <%= fotosMeninas[i] %>
-                        </li>
-                        <% } %>
+                    <div class="btn_container">
+                        <p>
+                            <button id="startMeninas" class="btn btn-large btn-primary start"> Girar </button>
+                        </p>
+                    </div>
                 </div>
             </div>
+             <div  style="display:block;margin-left:285px">
+                        <p>
+                            <button id="irDeNovo" class="btn btn-large btn-primary start"> Ir de novo </button>
+                        </p>
+                    </div>
         </div>
     </div>
     </div>

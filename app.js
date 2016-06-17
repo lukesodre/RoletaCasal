@@ -7,7 +7,7 @@ var Q = require('q');
 
 pastaMeninos = '/public/Meninos'
 pastaMeninas = '/public/Meninas'
-extensaoImagem = 'png'
+extensaoImagem = 'jpg'
 var walk = require('walk');
 
 // Walker options

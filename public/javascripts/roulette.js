@@ -95,7 +95,7 @@
 				p.$rouletteTarget.css('top', '-' + p.topPosition + 'px');
 			} else {
 				// TODO more smooth roll
-				p.$rouletteTarget.css('transform', 'translate(0px, -' + p.topPosition + 'px)');
+				p.$rouletteTarget.css('transform', 'translate(0px, -' + (p.topPosition) + 'px)');
 			}
 			setTimeout(roll, 1);
 		}
@@ -109,6 +109,7 @@
 				p.$images.eq(0).bind('load',function(){
 					p.imageHeight = $(this).height();
 					$roulette.css({ 'height' : (p.imageHeight + 'px') });
+					
 					p.totalHeight = p.imageCount * p.imageHeight;
 					p.runUpDistance = 2 * p.imageHeight;
 				}).each(function(){
@@ -135,6 +136,7 @@
 		}
 
 		var start = function() {
+			
 			p.playCount++;
 			if (p.maxPlayCount && p.playCount > p.maxPlayCount) {
 				return;
@@ -151,6 +153,7 @@
 		var stop = function(option) {
 			if (!p.isSlowdown) {
 				if (option) {
+					
 					var stopImageNumber = Number(option.stopImageNumber);
 					if (0 <= stopImageNumber && stopImageNumber <= (p.imageCount - 1)) {
 						p.stopImageNumber = option.stopImageNumber;
@@ -159,6 +162,7 @@
 				slowDownSetup();
 			}
 		}
+
 		var option = function(options) {
 			p = $.extend(p, options);
 			p.speed = Number(p.speed);

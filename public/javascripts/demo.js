@@ -5,7 +5,10 @@ $(function () {
 	$('.roulette').find('img').hover(function () {
 		console.log($(this).height());
 	});
-
+$('#irDeNovo').css('display','none');
+$('#irDeNovo').click(function(){
+	location.reload();
+})
 	var imagensMeninos = [];
 	var imagensMeninas = [];
 
@@ -32,8 +35,8 @@ $(function () {
 	var updateParamaterMeninos = function () {
 		imagemPararMeninos = getRandomArbitrary(0, imagensMeninos.length);
 		console.log("Imagem escolhida dos meninos:", imagemPararMeninos, imagensMeninos[imagemPararMeninos])
-		pMeninos['speed'] = 8
-		pMeninos['duration'] = 1
+		pMeninos['speed'] = 28
+		pMeninos['duration'] = 5
 		pMeninos['stopImageNumber'] = imagemPararMeninos
 		rouletterMeninos.roulette('option', pMeninos);
 	}
@@ -48,8 +51,8 @@ $(function () {
 			console.log('Encontradas imagens com o mesmo nome, selecioando',mesmoNome, imagensMeninas[mesmoNome])
 			imagemPararMeninas = mesmoNome
 		}
-		pMeninas['speed'] = 8
-		pMeninas['duration'] = 1
+		pMeninas['speed'] = 28
+		pMeninas['duration'] = 5
 		pMeninas['stopImageNumber'] = imagemPararMeninas
 		rouletterMeninas.roulette('option', pMeninas);
 	}
@@ -58,7 +61,8 @@ $(function () {
 
 	var pMeninos = {
 		startCallback: function () {
-			$('#startMeninos').attr('disabled', 'true');
+			$('#irDeNovo').css('display','none');
+			$('#startMeninos').css('display', 'none');
 			extrairImagensMeninos()
 			updateParamaterMeninos();
 			$('.stop').removeAttr('disabled');
@@ -66,7 +70,8 @@ $(function () {
 		slowDownCallback: function () {
 			$('.stop').attr('disabled', 'true');
 		},
-		stopCallback: function ($stopElm) {
+		stopCallback: function (fotoMenino) {
+			$('.rouletteMeninos').html(fotoMenino)
 			$('#startMeninos').removeAttr('disabled');
 			$('.stop').attr('disabled', 'true');
 		}
@@ -75,7 +80,8 @@ $(function () {
 
 	var pMeninas = {
 		startCallback: function () {
-			$('#startMeninas').attr('disabled', 'true');
+			$('#irDeNovo').css('display','none');
+			$('#startMeninas').css('display', 'none');
 			extrairImagensMeninas()
 			updateParamaterMeninas();
 			$('.stop').removeAttr('disabled');
@@ -83,7 +89,9 @@ $(function () {
 		slowDownCallback: function () {
 			$('.stop').attr('disabled', 'true');
 		},
-		stopCallback: function ($stopElm) {
+		stopCallback: function (fotoMenina) {
+			$('#irDeNovo').css('display','block');
+			$('.rouletteMeninas').html(fotoMenina)
 			$('#startMeninas').removeAttr('disabled');
 			$('.stop').attr('disabled', 'true');
 		}
