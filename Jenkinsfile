@@ -1,4 +1,5 @@
  node ('linux'){
   stage 'Build and Test'
-  echo 'teste'
+  sh 'build_test"
+
  }
