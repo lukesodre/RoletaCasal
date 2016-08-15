@@ -1,5 +1,5 @@
- node {
+ node ('linux') {
   stage 'Build and Test'
-  sh '/build_test'
+  sh 'build_test'
 
  }
