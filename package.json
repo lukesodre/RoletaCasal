@@ -10,9 +10,18 @@
   "license": "MIT",
   "dependencies": {
     "ejs": "^2.4.2",
-    "express": "^4.13.3",
+    "express": "^4.14.0",
     "formidable": "^1.0.17",
     "q": "^1.4.1",
     "walk": "^2.3.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukesodre/RoletaCasal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lukesodre/RoletaCasal/issues"
+  },
+  "homepage": "https://github.com/lukesodre/RoletaCasal#readme"
 }
